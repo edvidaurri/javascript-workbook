@@ -9,15 +9,44 @@ const rl = readline.createInterface({
 
 
 function rockPaperScissors(hand1, hand2) {
+  //check for tie, if tie return tie, if not check for win.
+  console.log
+  if (hand1 === hand2) {
+    return "It's a tie!";
+  } else {
+    //if hand1 chooses rock and hand2 chooses scissors, return hand1 wins.
+    //else hand2 wins.
 
-  // Write code here
+    if (hand1 === 'rock' && hand2 === 'scissors') {
+      return 'Hand one wins!';
+    }
 
+    //if hand1 chooses Paper and hand2 chooses rock, return hand1 wins.
+    //else hand2 wins.
+
+    else if (hand1 === 'paper' && hand2 === 'rock') {
+      return 'Hand one wins!';
+    }
+
+    //if hand1 chooses scissors and hand2 chooses paper, return hand1 wins.
+    //else hand2 wins.
+
+    else if (hand1 === 'scissors' && hand2 === 'paper') {
+      return 'Hand one wins!';
+
+      //else return hand2 wins.
+
+    } else {
+      return 'Hand two wins!';
+    }
+  }
 }
+
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
     rl.question('hand2: ', (answer2) => {
-      console.log( rockPaperScissors(answer1, answer2) );
+      console.log(rockPaperScissors(answer1, answer2));
       getPrompt();
     });
   });
