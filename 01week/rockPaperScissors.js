@@ -17,13 +17,15 @@ function rockPaperScissors(hand1, hand2) {
     //if hand1 chooses rock and hand2 chooses scissors, return hand1 wins.
     //else hand2 wins.
 
-    if (hand1 === 'rock' && hand2 === 'scissors') {
-      return 'Hand one wins!';
-    }
+    // if (hand1 === 'rock' && hand2 === 'scissors' || hand1 === 'paper' && hand2 === 'rock' || hand1 === 'scissors' && hand2 === 'paper') {
+    //   return 'Hand one wins!';
+
 
     //if hand1 chooses Paper and hand2 chooses rock, return hand1 wins.
     //else hand2 wins.
-
+    if (hand1 === 'rock' && hand2 === 'paper'){
+      return 'Hand one wins';
+    }
     else if (hand1 === 'paper' && hand2 === 'rock') {
       return 'Hand one wins!';
     }
