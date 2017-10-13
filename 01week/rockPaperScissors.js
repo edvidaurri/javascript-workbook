@@ -8,39 +8,24 @@ const rl = readline.createInterface({
 });
 
 
-function rockPaperScissors(hand1, hand2) {
-  //check for tie, if tie return tie, if not check for win.
-  console.log
+
+//check for tie, if tie return tie, if not check for win.
+
+function rockPaperScissors(a, b) {
+  const hand1 = a.trim().toLowerCase();
+  const hand2 = b.trim().toLowerCase();
   if (hand1 === hand2) {
     return "It's a tie!";
-  } else {
-    //if hand1 chooses rock and hand2 chooses scissors, return hand1 wins.
-    //else hand2 wins.
 
-    // if (hand1 === 'rock' && hand2 === 'scissors' || hand1 === 'paper' && hand2 === 'rock' || hand1 === 'scissors' && hand2 === 'paper') {
-    //   return 'Hand one wins!';
+// Make conditional statement for Hand1 to win.
 
+  } else if (hand1 === 'rock' && hand2 === 'scissors' || hand1 === 'paper' && hand2 === 'rock' || hand1 === 'scissors' && hand2 === 'paper') {
+    return "Hand one wins!";
 
-    //if hand1 chooses Paper and hand2 chooses rock, return hand1 wins.
-    //else hand2 wins.
-    if (hand1 === 'rock' && hand2 === 'paper'){
-      return 'Hand one wins';
-    }
-    else if (hand1 === 'paper' && hand2 === 'rock') {
-      return 'Hand one wins!';
-    }
+// Make conditional statement for Hand2 to win.
 
-    //if hand1 chooses scissors and hand2 chooses paper, return hand1 wins.
-    //else hand2 wins.
-
-    else if (hand1 === 'scissors' && hand2 === 'paper') {
-      return 'Hand one wins!';
-
-      //else return hand2 wins.
-
-    } else {
-      return 'Hand two wins!';
-    }
+  } else if (hand1 === 'scissors' && hand2 === 'rock' || hand1 === 'paper' && hand2 === 'scissors' || hand1 === 'rock' && hand2 === 'paper') {
+    return "Hand two wins!";
   }
 }
 
