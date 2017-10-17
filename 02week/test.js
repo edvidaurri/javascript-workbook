@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const assert = require('assert');
 const readline = require('readline');
@@ -89,7 +89,7 @@ if (typeof describe === 'function') {
     it('should detect if input is invalid entry', () => {
       assert.equal(rockPaperScissors('roc1', 'rock'), "Invalid entry!");
       assert.equal(rockPaperScissors('paper', 'dragon'), "Invalid entry!");
-      assert.equal(rockPaperScissors('scissors', 'cissors'), "Invalid entry!");
+      assert.equal(rockPaperScissors('scissrs', 'cissors'), "Invalid entry!");
     });
 
   });
