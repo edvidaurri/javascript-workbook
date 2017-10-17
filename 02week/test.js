@@ -11,13 +11,15 @@ function rockPaperScissors(a, b) {
   const hand1 = a.trim().toLowerCase();
   const hand2 = b.trim().toLowerCase();
 
+//.indexOf method searches for first occurance of an object and returns index position.
   const rpsArr = ['rock', 'paper', 'scissors', 'bomb'];
   if (rpsArr.indexOf(hand1) > -1 && rpsArr.indexOf(hand2) > -1) {
-
+//if statement makes string 'bomb' trump all other strings.
     if (hand1 === 'bomb') {
       return "Hand one wins!";
     } else if (hand2 === 'bomb') {
       return "Hand two wins!";
+//else if statement determines game a tie if both variables are equal.
     } else if (hand1 === hand2) {
       return "It's a tie!";
 
