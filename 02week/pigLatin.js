@@ -8,9 +8,15 @@ const rl = readline.createInterface({
 });
 
 
-function pigLatin(word) {
+// function pigLatin(word) {
+// Making sure branch works.https://github.com/edvidaurri/javascript-workbook/pull/3
 
-  // Making sure branch works.
+  const pigLatin = (letter) => {
+  //The toLowerCase() method returns the called string value and converts it to lower case.
+    letter = letter.toLowerCase(),
+  //The match() method searches for the first occurrence of the items in the array.
+    firstVowel = letter.match(/[aeiouy]/),
+    console.log(firstVowel);
 
 }
 
