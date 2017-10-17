@@ -11,19 +11,28 @@ const rl = readline.createInterface({
 // function pigLatin(word) {
 // Making sure branch works.https://github.com/edvidaurri/javascript-workbook/pull/3
 
-  const pigLatin = (letter) => {
+const pigLatin = (word) =>{
   //The toLowerCase() method returns the called string value and converts it to lower case.
-    letter = letter.toLowerCase(),
-  //The match() method searches for the first occurrence of the items in the array.
-    firstVowel = letter.match(/[aeiouy]/),
-    console.log(firstVowel);
-
+  word = word.trim().toLowerCase();
+    //The match() method searches for the first occurrence of the items in the array.
+  const firstVowel = word.match(/[aeiou]/);
+    // console.log(firstVowel);
+  const firstword = word.indexOf(firstVowel);
+    // return word + 'yay';
+  if (firstword > -1) {
+    return word.slice(firstword) + word.slice(0, firstword) + 'ay';
+  }
+  /// return word + 'way';
 }
+pigLatin('eight');
+
+
+
 
 
 function getPrompt() {
   rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
+    console.log(pigLatin(answer));
     getPrompt();
   });
 }
