@@ -19,34 +19,17 @@ function rockPaperScissors(a, b) {
 
     // Make conditional statement for Hand1 to win.
 
-  }
-  if (hand1 === 'rock') {
-    if (hand2 === 'scissors') {
-      return 'Hand one wins!';
-    } else {
-      if (hand2 === 'paper') {
-        return 'Hand two wins!';
-      }
-    }
-  }
-  if (hand1 === 'paper') {
-    if (hand2 === 'rock')
-      return 'Hand one wins!';
-  } else {
-    if (hand2 === 'scissors') {
-      return 'Hand two wins!';
-    }
-  }
-}
-if (hand1 === 'scissors') {
-  if (hand2 === 'paper')
-    return 'Hand one wins!';
-} else {
-  if (hand2 === 'rock') {
-    return 'Hand two wins!';
-  }
-}
+  } else if (hand1 === 'rock' && hand2 === 'scissors' || hand1 === 'paper' && hand2 === 'rock' || hand1 === 'scissors' && hand2 === 'paper') {
+    return "Hand one wins!";
+    // Make conditional statement for Hand2 to win.
 
+  } else if (hand1 === 'scissors' && hand2 === 'rock' || hand1 === 'paper' && hand2 === 'scissors' || hand1 === 'rock' && hand2 === 'paper') {
+    return "Hand two wins!";
+
+  } else {
+    return "Invalid entry!";
+  }
+}
 
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
