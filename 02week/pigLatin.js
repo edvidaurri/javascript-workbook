@@ -7,7 +7,6 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-
 //Function pigLatin(letter) takes the first letter(s) of a word that are not
 //vowels and removes it and sends it to the back of the string and adds “ay”.
 
@@ -28,16 +27,20 @@ const rl = readline.createInterface({
 const pigLatin = (letter) => {
   //Use .toLowerCase and .trim methods to pass test for Uppercase and spaces.
   letter = letter.toLowerCase().trim();
+
   //Regular Expression method .match will  retrieves the matches when matching
   // a string against a regular expression.
   const firstVowel = letter.match(/[aeiou]/);
+
   //Use .idexOf method to find first occurrence of vowel.
   const firstLetterPosition = letter.indexOf(firstVowel);
   //Use if statement to find letter(s) that precede the first occurance of a
   //vowel and send to back of word and add "ay".
   if (firstLetterPosition > 0) {
+
     return letter.slice(firstLetterPosition) + letter.slice(0, firstLetterPosition) + "ay";
   } else {
+    
   //Otherwise just add "yay" to end of word that starts with a vowel.
     return letter + "yay";
   }
