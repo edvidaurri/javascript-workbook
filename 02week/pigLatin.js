@@ -26,20 +26,22 @@ const rl = readline.createInterface({
 //are before the first vowel in string and send to back of string and + “ay”.
 
 const pigLatin = (letter) => {
-//Use .toLowerCase and .trim methods to pass test for Uppercase and spaces.
+  //Use .toLowerCase and .trim methods to pass test for Uppercase and spaces.
   letter = letter.toLowerCase().trim();
-//Regular Expression method .match will  retrieves the matches when matching
-// a string against a regular expression.
+  //Regular Expression method .match will  retrieves the matches when matching
+  // a string against a regular expression.
   const firstVowel = letter.match(/[aeiou]/);
-
+  //Use .idexOf method to find first occurrence of vowel.
   const firstLetterPosition = letter.indexOf(firstVowel);
-//
+  //Use if statement to find letter(s) that precede the first occurance of a
+  //vowel and send to back of word and add "ay".
   if (firstLetterPosition > 0) {
     return letter.slice(firstLetterPosition) + letter.slice(0, firstLetterPosition) + "ay";
+  } else {
+  //Otherwise just add "yay" to end of word that starts with a vowel.
+    return letter + "yay";
   }
-  return letter + "yay";
 }
-
 
 function getPrompt() {
   rl.question('word ', (answer) => {
