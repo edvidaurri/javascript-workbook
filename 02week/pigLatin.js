@@ -9,8 +9,16 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
+//Write out variable to check for item in the array.
+//Assign 'const firstVowel' to an array [] The items in array:['a', 'e', 'i', 'o', 'u']
+//Use the .indexOf method in an "if statement" to determine if item is in the array.
+// for words that start with a vowel have "ay" appended to the end of the word.
+//Assign a variable 'const firstLetter' for words that are not in the array.
+//Words that start with a consonant have all consonant letters up to the first vowel moved to the end of the word.
+//Use .slice method to remove consonant that are in front of the first vowel.
+//Use .slice method along with the index position and 'firstLetter' and return the consonant(s) to the end and add 'ay' to end of method.
 
-  // Your code here
+
 
 }
 
