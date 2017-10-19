@@ -28,7 +28,10 @@ function rockPaperScissors(a, b) {
       return "Hand one wins!";
       // Make conditional statement for Hand2 to win.
 
+
     } else if (hand1 === 'scissors' && hand2 === 'rock' || hand1 === 'paper' && hand2 === 'scissors' || hand1 === 'rock' && hand2 === 'paper') {
+    } else if (hand1 === 'rock' && hand2 === 'paper' || hand1 === 'paper' && hand2 === 'scissors' || hand1 === 'scissors' && hand2 === 'rock') {
+
       return "Hand two wins!";
     }
   } else {

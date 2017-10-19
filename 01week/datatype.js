@@ -1,104 +1,136 @@
 //1. Write a JavaScript program to display the current day and time.
-//Javascript provides date and time functions, utilize javascript date and time functions: getDate() returns values 1-31,get.Month() returns values 0-6,getFullYear() returns values 1900+. Make method called getDay() assign it to new Date()
-//Repeat method for time called getTime() using getHours(), getMinutes(),and getSeconds(). For minutes and seconds less that 10 run an if statement to place 0 in front of integer.
+//Javascript provides date and time functions, utilize
+//javascript day and time functions: getDay() returns values of the name of
+// the day of week. Make method called getDay() assign it to new Date()
+//Repeat method for time called getTime() using getHours(), getMinutes()
+//,and getSeconds(). For minutes and seconds less that 10 run an if
+//statement to place 0 in front of integer.
 
-var getDay = new Date();
-day = getDay.getDate();
-month = getDay.getMonth() + 1;
-year = getDay.getFullYear();
-console.log(day + "-" + month + "-" + year);
-
-var getTime = new Date(),
-  hours = getTime.getHours(),
-  minutes = getTime.getMinutes();
-seconds = getTime.getSeconds();
-if (minutes < 10) {
-  minutes = "0" + minutes;
+function funName() {
+  var today = new Date();
+  var day = today.getDay();
+  var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  // Log day of week from dayList array
+  console.log("Today is: " + dayList[day]);
 }
-if (seconds < 10) {
-  seconds = '0' + seconds;
-}
-console.log(hours + ":" + minutes + ":" + seconds);
+funName();
 
+function funtime() {
+  var time = new Date();
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) {
+    seconds = '0' + seconds;
+  }
+  console.log(hours + ":" + minutes + ":" + seconds);
+}
+funtime();
 
 //2. Write a JavaScript program to convert a number to a string.
 //Make a var that is assigned a number then make a var to wrap the number in a string, print to log.
-var anumber = 1;
-var astring = anumber + '';
-console.log(astring);
+function numToString(anumber) {
+  anumber.toString();
+  return anumber;
+}
+console.log(numToString('12'));
 
 
 //3. Write a JavaScript program to convert a string to the number.
 //Use the parseInt() function which analyzes a string and returns an number.
-var a = parseInt("10");
-console.log(a);
+function stringToNum(a) {
+  return a = parseInt("10");
+}
+console.log(stringToNum());
 
 
 //4. Write a JavaScript program that takes in different datatypes and prints out whether they are a:
-//Boolean: This is conditional statement. Run an if statement to determine whether true or not
-if (10 === 2) {
-  console.log("This statement is true");
-} else {
-  console.log("This statement is false");
+//Boolean: typeof to determine whether true or not.
+function dataBol() {
+  let object = true;
+  console.log(typeof object);
 }
+dataBol();
 
 //Null: null is nothing set value of var to null and print var.
-var a = null;
-console.log(a);
+function dataNul() {
+  let object = null;
+  console.log(typeof object);
+}
+dataNul();
 
 //Undefined: Run typeof, set value of var to a undefined value and print var.
-var b;
-console.log(b);
-
+function dataUnd() {
+  let object;
+  console.log(typeof object);
+}
+dataUnd();
 //Number: Run typeof, assign value of var to a number and print var.
-var num = 23;
-console.log(num);
+function dataNum() {
+  let object = 23;
+  console.log(typeof object);
+}
+dataNum();
 
 //NAN: assign a non number value to a var and print var.Or parseInt a string value to get NaN.
-var notNum = 0 / 0;
-console.log(notNum);
-
+function dataNan() {
+  let object = 0 / 0;
+  console.log(typeof object);
+}
+dataNan();
 //String: Run typeof, assign a string value to a var and print var.
-var string = "Eric";
-console.log(string);
-
+function dataStr() {
+  let object = 'Eric';
+  console.log(typeof object);
+}
+dataStr();
 
 //5.Write a JavaScript program that adds 2 numbers together.
 //Make 2 vars and assign a value to them. Make a third var that adds to two vars together.
 
-var a, b, c;
-a = 13;
-b = 'Edward';
-c = a + b;
-console.log(a + ' ' + b);
+function sum(a, b) {
+  var c = a + b;
+  return c;
+}
+console.log(sum(4, 4));
 
 
 //6. Write a JavaScript program that runs only when 2 things are true.
 //This is conditional statement. Run an if statement to determine whether 2 things are true or not using &&.
 
-if (true && false) {
-  console.log("Run!");
-} else {
-  console.log("Don't run");
+function ab(xy, yz) {
+  if (xy === true && yz === true) {
+    return "it is true";
+  } else {
+    return "it is false";
+  }
 }
-
-//6. Write a JavaScript program that runs only when 1 of 2 things are true.
+console.log(ab(true, true));
+//7. Write a JavaScript program that runs only when 1 of 2 things are true.
 //This is conditional statement. Run an if statement to determine if one of two things are true or not using ||
 
-if (true || false) {
-  console.log("Run!");
-} else {
-  console.log("Don't run");
+function bc(xy, yz) {
+  if (xy === true || yz === false) {
+    return 'this is true';
+  } else {
+    return 'this is false';
+  }
 }
+console.log(bc(false, false));
 
 
-//7.Write a JavaScript program that runs when both things are not true.
+//8.Write a JavaScript program that runs when both things are not true.
 //This is conditional statement. Run an if statement to determine if two things are not true.
 
-var x = 'apple';
-var y = 2;
-if (!x === y) {
-  console.log('This is true!');
-} else {
-  console.log('This is not true!');
+function cd(xy, yz) {
+  if (xy === false && yz === false) {
+    return 'this is a true statement';
+
+  } else {
+    return 'this is a false statement';
+  }
 }
+console.log(cd(true, true))
