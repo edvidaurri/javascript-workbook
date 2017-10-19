@@ -14,20 +14,27 @@ const rl = readline.createInterface({
 function rockPaperScissors(a, b) {
   const hand1 = a.trim().toLowerCase();
   const hand2 = b.trim().toLowerCase();
-  if (hand1 === hand2) {
+  const rpsArr = ['rock', 'paper', 'scissors', 'bomb'];
+  if (rpsArr.indexOf(hand1) > -1 && rpsArr.indexOf(hand2) > -1) {} else {
+    return "Invalid entry!";
+  }
+
+  if (hand1 === 'bomb') {
+    return "Hand one wins!";
+  } else if (hand2 === 'bomb') {
+    return "Hand two wins!";
+  } else if (hand1 === hand2) {
     return "It's a tie!";
 
     // Make conditional statement for Hand1 to win.
+
 
   } else if (hand1 === 'rock' && hand2 === 'scissors' || hand1 === 'paper' && hand2 === 'rock' || hand1 === 'scissors' && hand2 === 'paper') {
     return "Hand one wins!";
     // Make conditional statement for Hand2 to win.
 
-  } else if (hand1 === 'scissors' && hand2 === 'rock' || hand1 === 'paper' && hand2 === 'scissors' || hand1 === 'rock' && hand2 === 'paper') {
-    return "Hand two wins!";
-
   } else {
-    return "Invalid entry!";
+    return "Hand two wins!";
   }
 }
 
