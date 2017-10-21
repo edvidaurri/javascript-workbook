@@ -6,6 +6,13 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
+/*Player must get 3 in a row. First player selects a position in one of 3 rows
+on the board then selects a position in one of 3 columns. Next player repeats
+same senerio. Game is over when a player is able to align 3 in a row verticle,
+column or diagonal.
+*/
+
 let board = [
   [' ', ' ', ' '],
   [' ', ' ', ' '],
@@ -24,14 +31,31 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  // Your code here
+  /* Run an if conditional statement to make rows all equal to the same stri
+  In "0" row make variable for function horizontalWin equal to to columns "0,
+  "1", "2". [[0,0], [0,1], [0,2], [1,0], [1,1], [1,2], [2,0], [2,1], [2,2]]
+  */
+  if ((board[0][0] === board[0][1] && board[0][1] === board[0][2]) || (board[1][0]
+    === board[1][1] && board[1][1] === board[1][2]) || (board[2][0] === board[2][1] &&
+    board[2][1] === board[2][2])) {
+  return `Player ${playerTurn} Wins!`;
+}
+}
 }
 
 function verticalWin() {
+  /* Run an if conditional statement to make rows all equal to the same stri
+  In "0" row make variable for function horizontalWin equal to to columns "0,
+  "1", "2". [[0,0], [0,1], [0,2], [1,0], [1,1], [1,2], [2,0], [2,1], [2,2]]
+  */
   // Your code here
 }
 
 function diagonalWin() {
+  /* Run an if conditional statement to make rows all equal to the same stri
+  In "0" row make variable for function horizontalWin equal to to columns "0,
+  "1", "2". [[0,0], [0,1], [0,2], [1,0], [1,1], [1,2], [2,0], [2,1], [2,2]]
+  */
   // Your code here
 }
 
@@ -41,6 +65,8 @@ function checkForWin() {
 
 function ticTacToe(row, column) {
   // Your code here
+  /* call printBoard function 
+  */
 }
 
 function getPrompt() {
