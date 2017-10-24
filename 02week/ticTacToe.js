@@ -40,7 +40,6 @@ const horizontalWin = () => {
     return true;
   }
 }
-
 /* Run an conditional statement to make columns all equal to the same string
 In columns "0", "1", "2" make variable 'block' for function verticalWin equal:
 Column "0" =>[0,0], [1,0], [2,0] and Column "1" => [0,1], [1,1], ]2,0}
@@ -51,7 +50,6 @@ const verticalWin = () => {
     return true;
   }
 }
-
 /* Run an conditional statement to make equal to the same string
  make variable 'block' for function diagonalWin equal:[0,0], [1,1], [2,2] and
  => [0,2], [1,1], ]2,0}. */
@@ -60,21 +58,32 @@ const diagonalWin = () => {
     return true;
   }
 }
-
-
+/* If any of the following combinations occur: playerTurn wins horizontally.
+[[0,0], [0,1], [0,2]], [[1,0], [1,1], [1,2]], [[2,0], [2,1], [2,2]] Then run
+conditional statement for horizontalWin by calling printBoard function.
+If any of the following combinations occur: playerTurn wins vertically.
+[[0,0], [1,0], [2,0]], [[0,1], [1,1], [2,1]], [[0,2], [1,2], [2,2]],Then
+continue conditional statement for verticalWin and call printBoard function.
+If any of the following combinations occur: playerTurn wins diagonally.
+[[0,0], [1,1], [2,2]], [[0,2], [1,1], [2,0]]] Then continue conditional statement
+for diagonalWin by calling printBoard function*/
 const checkForWin = () => {
-  if (horizontalWin() || verticalWin() || diagonalWin()) {
-    console.log(`Player ${playerTurn} Wins!`);
-  } else if (turnCount === 9) {
-    console.log("It's a tie!")
+  if (horizontalWin()) {
+    printBoard();
+    return true;
+  } else if (verticalWin()) {
+    printBoard();
+    return true;
+  } else if (diagonalWin()) {
+    printBoard();
+    return true;
   } else {
     return false;
   }
-
 }
-
+/* playerTurn starts with "X" and first chooses a row designation from range
+ of 0 to 2, then chooses a column designation from a range  of 0 to 2. */
 function ticTacToe(row, column) {
-
   if (playerTurn === 'X') {
     playerTurn = 'O';
   } else {
@@ -84,13 +93,6 @@ function ticTacToe(row, column) {
     board[row].splice(column, 1, playerTurn);
   }
   return false;
-  // } else {
-    // console.log(`The winner is player ${playerTurn}.  Start a new game`);
-    // return true;
-  // } else {
-    // console.log('Please choose another block!  That one is taken!');
-  // } else {
-    // console.log('Please enter a valid index.  Valid values are 0, 1, 2');
 }
 
 

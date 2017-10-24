@@ -10,7 +10,7 @@ console.log(cars.length);
 // Use the concat method to combine the cars and moreCars arrays into an array called totalCars.
 const moreCars = ['Kia', 'VW', 'BMW', 'Honda'];
 let totalCars = cars.concat(moreCars);
-console.log (totalCars);
+console.log(totalCars);
 
 // indexOf and lastIndexOf
 // Use the indexOf method to console.log the index of Honda.
@@ -77,6 +77,6 @@ console.log(carsInReverse);
 // });
 
 const numbers = [23, 45, 0, 2];
-numbers.forEach((item,index) => {
-    console.log(item + 2);
+numbers.forEach((item, index) => {
+  console.log(item + 2);
 });
