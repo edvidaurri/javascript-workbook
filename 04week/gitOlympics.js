@@ -6,4 +6,4 @@ const printListOfOlympians = (myArr) => {
   });
 }
 console.log(printListOfOlympians('steph', 'john', 'edward', 'renee', 'mia'));
-//Eddie Vidaurri
+//Eddie  O Vidaurri
