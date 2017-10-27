@@ -27,15 +27,23 @@ The .pop method will be used to remove the last element from the stacks array.
 Then the .push method will be used to place the removed value (block) that was poped
 and place it in any of the other stacks.*/
 function movePiece(startStack, endStack) {
-  stacks[endStack].push(stacks[startStack].pop());
+  if (stacks[endStack].push(stacks[startStack].pop())){
+    return true;
+  }
 }
 
 /*A move is legal is when a smaller block is placed in an empty stack by itself,
  if a stack is occupied by a larger block then the move is not allowed. The .length
  method is used to make the occupied stack equal to 0. */
-function isLegal() {
+function isLegal(startStack, endStack) {
   // Your code here
-
+  if (stacks[endStack].length === 0) {
+    return true;
+  } else if (stacks[startStack].pop() < stacks[endStack].pop()) {
+    return true;
+  } else {
+    return false;
+  }
 }
 /*To check for win  a condition will need to be set up where all 4 of the blocks
  will have to be moved from stack.a to either stack.b or stack.c. If this condition
@@ -52,12 +60,12 @@ function checkForWin() {
 }
 
 /*If function movePiece can move from one stack to another and if function isLegal
-a legidimate move then run function until there is a win. */
+is a legitimate move then run function until there is a win. */
 function towersOfHanoi(startStack, endStack) {
-if(movePiece(startStack, endStack)){;
-isLegal(startStack, endStack);
-}
-checkForWin();
+  if (movePiece(startStack, endStack)) {
+    isLegal(startStack, endStack)
+  }
+  checkForWin();
 }
 
 function getPrompt() {
