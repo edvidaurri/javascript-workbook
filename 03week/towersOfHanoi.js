@@ -24,18 +24,16 @@ function printStacks() {
 }
 /*The stacks object has 3 keys (a, b, c) and the key values 4, 3, 2, 1 are in an array.
 The .pop method will be used to remove the last element from the stacks array.
-Then the .push method will be used to place the removed value (block) that was poped
+Then the .push method will be used to place the removed value (block) that was popped
 and place it in any of the other stacks.*/
-function movePiece(startStack, endStack) {
-  if (stacks[endStack].push(stacks[startStack].pop())){
-    return true;
-  }
+const movePiece = (startStack, endStack) => {
+stacks[endStack].push(stacks[startStack].pop());
 }
 
 /*A move is legal is when a smaller block is placed in an empty stack by itself,
  if a stack is occupied by a larger block then the move is not allowed. The .length
  method is used to make the occupied stack equal to 0. */
-function isLegal(startStack, endStack) {
+const isLegal = (startStack, endStack) => {
   // Your code here
   if (stacks[endStack].length === 0) {
     return true;
@@ -50,7 +48,7 @@ function isLegal(startStack, endStack) {
  is met then it will be returned as true. If neither condition is met then it is
  a false conditional statement. The .length method will be used to determine if
  all 4 blocks are stacked on stacks.b or stacks.c */
-function checkForWin() {
+const checkForWin = () => {
   // Your code here
   if (stacks.b.length === 4 || stacks.c.length === 4) {
     return true;
