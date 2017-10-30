@@ -58,7 +58,7 @@ const checkForWin = () => {
 }
 
 /*If function movePiece can move from one stack to another and if function isLegal
-is a legitimate move then run function until there is a win. */
+is a legitimate move then run towersOfHanoi function until there is a win. */
 const towersOfHanoi = (startStack, endStack) => {
   if (movePiece(startStack, endStack)) {
     isLegal(startStack, endStack)
