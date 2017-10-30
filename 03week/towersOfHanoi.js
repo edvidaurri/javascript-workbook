@@ -27,7 +27,7 @@ The .pop method will be used to remove the last element from the stacks array.
 Then the .push method will be used to place the removed value (block) that was popped
 and place it in any of the other stacks.*/
 const movePiece = (startStack, endStack) => {
-stacks[endStack].push(stacks[startStack].pop());
+  stacks[endStack].push(stacks[startStack].pop());
 }
 
 /*A move is legal is when a smaller block is placed in an empty stack by itself,
@@ -50,7 +50,7 @@ const isLegal = (startStack, endStack) => {
  all 4 blocks are stacked on stacks.b or stacks.c */
 const checkForWin = () => {
   // Your code here
-  if (stacks.b.length === 4 || stacks.c.length === 4) {
+  if (stacks.c.length === 4) {
     return true;
   } else {
     return false;
@@ -59,14 +59,14 @@ const checkForWin = () => {
 
 /*If function movePiece can move from one stack to another and if function isLegal
 is a legitimate move then run function until there is a win. */
-function towersOfHanoi(startStack, endStack) {
+const towersOfHanoi = (startStack, endStack) => {
   if (movePiece(startStack, endStack)) {
     isLegal(startStack, endStack)
   }
   checkForWin();
 }
 
-function getPrompt() {
+const getPrompt = () => {
   printStacks();
   rl.question('start stack: ', (startStack) => {
     rl.question('end stack: ', (endStack) => {
@@ -113,8 +113,8 @@ if (typeof describe === 'function') {
     it('should detect a win', () => {
       stacks = {
         a: [],
-        b: [4, 3, 2, 1],
-        c: []
+        b: [],
+        c: [4, 3, 2, 1]
       };
       assert.equal(checkForWin(), true);
       stacks = {
@@ -125,13 +125,32 @@ if (typeof describe === 'function') {
       assert.equal(checkForWin(), false);
     });
   });
+
+  /* Test for when game ends by moving all blocks to stack.c only. It would look like
+  this a[]b[]c[4,3,2,1] */
+  describe('#checkForWin()', () => {
+    it('should detect a win only in "stacks c"', () => {
+      stacks = {
+        a: [],
+        b: [],
+        c: [4, 3, 2, 1]
+      };
+      assert.equal(checkForWin(), true);
+      stacks = {
+        a: [],
+        b: [4, 3, 2, 1],
+        c: []
+      };
+      assert.equal(checkForWin(), false);
+    });
+  });
+
 } else {
 
   getPrompt();
 
 }
-/* Test for when game ends by moving all blocks to stack.c only. It would look like
-this a[]b[]c[4,3,2,1] */
 
-/* Test to not allow for an illegal input. It would look like: a[5,3]
-b[1,6] c[]*/
+
+/* Test to not allow for an illegal input. It would look like: a[4,3,2]
+b[] c[5]*/
