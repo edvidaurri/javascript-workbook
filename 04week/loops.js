@@ -41,12 +41,13 @@ until an event returns false. For loops require more steps to execute which
 can make code seem more complex */
 
 /*What is the difference between a for loop and a for...in loop?
-The for loop are all about having to do with doing the same thing over and over again
+The for loop are all about having to do with doing the same thing over and over
+again that consists of three expressions (var i = 0; i < 9; i++). 
 The for...in loop iterates or repeats over the enumerable properties of an object.
 For each distinct property, statements can be executed.*/
 
-/*The while loop creates a loop that executes a specific statement as
+/*The while loop creates a loop that executes a specific statement and runs as
 long as the condition remains true. The condition is evaluated before
-executing the statement. The do...while loop creates a loop that executes
+executing the loop statement. The do...while loop creates a loop that executes
 a specified statement until the condition returns false. The condition
 is evaluated after executing the statement.*/
