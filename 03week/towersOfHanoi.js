@@ -57,8 +57,9 @@ const checkForWin = () => {
   }
 }
 
-/*If function movePiece can move from one stack to another and if function isLegal
-is a legitimate move then run towersOfHanoi function until there is a win. */
+/*Use an If statement for the function movePiece can move from one stack to
+another and if function isLegal is a legitimate move then run towersOfHanoi
+function until there is a win. */
 const towersOfHanoi = (startStack, endStack) => {
   if (movePiece(startStack, endStack)) {
     isLegal(startStack, endStack)
@@ -145,12 +146,11 @@ if (typeof describe === 'function') {
     });
   });
 
+  /* Test to not allow for an illegal input of character in start stack or end stack.
+  Only a, b, and c characters would be allowed.*/
+
 } else {
 
   getPrompt();
 
 }
-
-
-/* Test to not allow for an illegal input. It would look like: a[4,3,2]
-b[] c[5]*/
