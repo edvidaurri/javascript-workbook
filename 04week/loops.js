@@ -14,11 +14,11 @@ var person = {
 }
 console.log(person);
 //2b a for...in loop and if state associated with the key birthDate.
-for (const bDay in person) {
-  if (person.hasOwnProperty(x)) {
-    console.log(`person.${bDay} = ${person[bDay]}`);
-  }
-}
+for (const bDay in person){
+   if (bDay === 'birthDate'){
+      console.log(person[bDay]);
+   }
+ }
 
 //3. Write While Loop
 var e = 0;
