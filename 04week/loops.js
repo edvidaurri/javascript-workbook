@@ -22,7 +22,7 @@ for (const bDay in person){
 
 //3. Write While Loop
 var e = 0;
-while (e < 13) {
+while (e <= 1000) {
   e++;
   console.log(e);
 }
@@ -32,7 +32,7 @@ nums = 0;
 do {
   nums += 1;
   console.log(nums);
-} while (nums < 1000);
+} while (nums <=1000);
 
 /*When is a for loop better than a while loop?
 For loops are used when you know the amount of times you need to loop,
