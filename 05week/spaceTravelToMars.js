@@ -9,7 +9,7 @@ let jobTypes = {
   programmer: 'Any Ship!'
 };
 
-// Your code here
+// Create a CrewMember class//
 class CrewMember {
   constructor(name, job, specialSkill, ship) {
     this.name = name;
@@ -18,19 +18,29 @@ class CrewMember {
     this.ship = ship;
   }
   /*Make a method that takes a new crewMember and assigns it to a ship.
-    And adds the member to the ship crew. */
-    enterShip(ship) {
-      this.ship = ship;
-      ship.crew.push(this);
-    }
+    And adds the member to the ship crew. Use .push to add crew member*/
+  enterShip(ship) {
+    this.ship = ship;
+    ship.crew.push(this);
+  }
 }
-
+// Create a Ship class //
 class Ship {
   constructor(name, type, ability, crew) {
     this.name = name;
     this.type = type;
     this.ability = ability;
     this.crew = [];
+  }
+  /*Make method to return a missionStatement correctly when a crew member enters the ship.
+  If a crew member can not enter the ship then return "Can't perform a mission yet. Use .length
+  to determine if mission can be performed*/
+  missionStatement() {
+    if (this.crew.length < 1) {
+      return "Can't perform a mission yet.";
+    } else {
+      return this.ability;
+    }
   }
 }
 const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
