@@ -20,6 +20,7 @@ let board = [
 ];
 
 let playerTurn = 'X';
+let turns = 0;
 
 function printBoard() {
   console.log('   0  1  2');
@@ -35,28 +36,20 @@ In rows  make variable for function horizontalWin equal:Row "0"
 => [[0,0], [0,1], [0,2] and Row "1" => [1,0], [1,1], [1,2]
 and Row"2 => [2,0], [2,1], [2,2]].*/
 const horizontalWin = () => {
-  if ((board[0][0] === board[0][1] && board[0][1] === board[0][2]) || (board[1][0] === board[1][1] && board[1][1] === board[1][2]) || (board[2][0] === board[2][1] &&
-      board[2][1] === board[2][2])) {
-    return true;
-  }
+  return (board[0][0] && board[0][1] && board[0][2] === playerTurn|| board[1][0] && board[1][1] && board[1][2] === playerTurn || board[2][0] && board[2][1] && board[2][2] === playerTurn);
 }
 /* Run an conditional statement to make columns all equal to the same string
 In columns "0", "1", "2" make variable 'block' for function verticalWin equal:
 Column "0" =>[0,0], [1,0], [2,0] and Column "1" => [0,1], [1,1], ]2,0}
 Column "2" =>[0,2], [1,2],[2,2]. */
 const verticalWin = () => {
-  if ((board[0][0] === board[1][0] && board[1][0] === board[2][0]) || (board[0][1] === board[1][1] && board[1][1] === board[2][1]) || (board[0][2] === board[1][2] &&
-      board[1][2] === board[2][2])) {
-    return true;
-  }
+  return (board[0][0] && board[1][0] && board[2][0] === playerTurn || board[0][1] && board[1][1] && board[2][1] === playerTurn || board[0][2] && board[1][2] && board[2][2] === playerTurn);
 }
 /* Run an conditional statement to make equal to the same string
  make variable 'block' for function diagonalWin equal:[0,0], [1,1], [2,2] and
  => [0,2], [1,1], ]2,0}. */
 const diagonalWin = () => {
-  if (board[0][0] === board[1][1] && board[1][1] === board[2][2] || (board[0][2] === board[1][1] && board[1][1] === board[2][0])) {
-    return true;
-  }
+  return  (board[0][0] && board[1][1] && board[2][2] === playerTurn || board[0][2] && board[1][1] && board[2][0] === playerTurn);
 }
 /* If any of the following combinations occur: playerTurn wins horizontally.
 [[0,0], [0,1], [0,2]], [[1,0], [1,1], [1,2]], [[2,0], [2,1], [2,2]] Then run
@@ -67,32 +60,29 @@ continue conditional statement for verticalWin and call printBoard function.
 If any of the following combinations occur: playerTurn wins diagonally.
 [[0,0], [1,1], [2,2]], [[0,2], [1,1], [2,0]]] Then continue conditional statement
 for diagonalWin by calling printBoard function*/
-const checkForWin = () => {
-  if (horizontalWin()) {
-    printBoard();
-    return true;
-  } else if (verticalWin()) {
-    printBoard();
-    return true;
-  } else if (diagonalWin()) {
-    printBoard();
+function checkForWin() {
+  if (turns === 9) {
+    console.log("It's a tie.");
+  } else if (horizontalWin() || verticalWin() || diagonalWin()) {
+    console.log(`Player ${playerTurn} Wins!`);
     return true;
   } else {
     return false;
   }
 }
+
+
 /* playerTurn starts with "X" and first chooses a row designation from range
- of 0 to 2, then chooses a column designation from a range  of 0 to 2. */
+ of 0 to 2, then chooses a column designation from a range  of 0 to 2. Player O
+ repeats steps. Then check for win.*/
 function ticTacToe(row, column) {
+  board[row][column] = playerTurn;
   if (playerTurn === 'X') {
     playerTurn = 'O';
   } else {
     playerTurn = 'X';
   }
-  if (board[row][column] === ' ') {
-    board[row].splice(column, 1, playerTurn);
-  }
-  return false;
+  checkForWin();
 }
 
 
