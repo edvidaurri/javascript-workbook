@@ -1,5 +1,5 @@
 'use strict';
-/* */
+
 let assert = require('assert');
 
 let jobTypes = {
@@ -18,13 +18,13 @@ class CrewMember {
     this.ship = ship;
   }
   /*Make a method that takes a new crewMember and assigns it to a ship.
-  And adds the member to the ship crew. */
-  enterShip(ship) {
-    this.ship = ship;
-    ship.crew.push(this);
-  }
+    And adds the member to the ship crew. */
+    enterShip(ship) {
+      this.ship = ship;
+      ship.crew.push(this);
+    }
 }
-/*Make method to return a missionStatement correctly */
+
 class Ship {
   constructor(name, type, ability, crew) {
     this.name = name;
@@ -32,15 +32,8 @@ class Ship {
     this.ability = ability;
     this.crew = [];
   }
-  missionStatement() {
-    if (this.crew.length < 1) {
-      return "Can't perform a mission yet.";
-    } else {
-      return this.ability;
-    };
-  }
 }
-const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry')
+const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
 const mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
 
 //tests
