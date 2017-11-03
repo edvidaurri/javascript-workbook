@@ -7,12 +7,11 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// code plan
-// movechecker(s,e)
-// use .split for start and end
+
+/* movechecker(s,e) use .split for start and end
 // make the end equal the start in side function
 // islegal function is necessary
-// how to kill a checker
+*/ how to kill a checker
 
 function Checker(color) {
   if (color === 'white') {
@@ -102,6 +101,7 @@ function Game() {
     const end = y.split('').map(str => Number(str));
     this.board.grid[end[0]][end[1]] = this.board.grid[start[0]][start[1]];
     this.board.grid[start[0]][start[1]] = null;
+    console.log
   };
   this.islegal = (start, end) => {
     if (this.board.grid[start[0]][start[1]]) {
