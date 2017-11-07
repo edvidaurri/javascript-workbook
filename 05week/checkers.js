@@ -8,10 +8,10 @@ const rl = readline.createInterface({
 });
 
 
-/* movechecker(s,e) use .split for start and end
+
 // make the end equal the start in side function
 // islegal function is necessary
-*/ how to kill a checker
+/*how to kill a checker*/
 
 function Checker(color) {
   if (color === 'white') {
@@ -85,7 +85,6 @@ function Board() {
   // Your code here
 }
 
-
 function Game() {
 
   this.board = new Board();
@@ -95,14 +94,15 @@ function Game() {
     this.board.populateGrid();
   };
 
-  /* Take start piece */
-  this.moveChecker = (x, y) => {
-    const start = x.split('').map(str => Number(str));
-    const end = y.split('').map(str => Number(str));
+  /* Take start piece and move diagonally left or right. */
+  this.moveChecker = (rows, columns) => {
+    const start = rows.split('').map(str => Number(str));
+    const end = columns.split('').map(str => Number(str));
     this.board.grid[end[0]][end[1]] = this.board.grid[start[0]][start[1]];
     this.board.grid[start[0]][start[1]] = null;
-    console.log
+    // console.log (this.board.grid[start[0]][start[1]].color)
   };
+
   this.islegal = (start, end) => {
     if (this.board.grid[start[0]][start[1]]) {
       if ([start[0]] - 1 === [end[0]]) {
