@@ -9,9 +9,9 @@ const rl = readline.createInterface({
 
 
 
-// make the end equal the start in side function
+// make the end equal the start inside function
 // islegal function is necessary
-/*how to kill a checker*/
+/*Make function to kill a checker*/
 
 function Checker(color) {
   if (color === 'white') {
@@ -94,7 +94,7 @@ function Game() {
     this.board.populateGrid();
   };
 
-  /* Take start piece and move diagonally left or right. */
+  /* Create a function to move a checker.*/
   this.moveChecker = (rows, columns) => {
     const start = rows.split('').map(str => Number(str));
     const end = columns.split('').map(str => Number(str));
@@ -102,7 +102,7 @@ function Game() {
     this.board.grid[start[0]][start[1]] = null;
     // console.log (this.board.grid[start[0]][start[1]].color)
   };
-
+/*Take start piece and move diagonally left or right. */
   this.islegal = (start, end) => {
     if (this.board.grid[start[0]][start[1]]) {
       if ([start[0]] - 1 === [end[0]]) {
