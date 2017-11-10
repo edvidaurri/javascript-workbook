@@ -34,6 +34,8 @@ function filter(arr, callback) {
 }
 filter(numArray);
 
+
+
 function some(arr, callback) {
   // Your code here
 }
