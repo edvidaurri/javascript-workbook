@@ -81,8 +81,7 @@ function Board() {
       }
     }
   };
-
-  // Your code here
+  
 }
 
 function Game() {
@@ -94,7 +93,7 @@ function Game() {
     this.board.populateGrid();
   };
 
-  /* Create a function to move a checker.*/
+  /* Need to take start piece and move diagonally left or right.*/
   this.moveChecker = (rows, columns) => {
     const start = rows.split('').map(str => Number(str));
     const end = columns.split('').map(str => Number(str));
@@ -102,7 +101,7 @@ function Game() {
     this.board.grid[start[0]][start[1]] = null;
     // console.log (this.board.grid[start[0]][start[1]].color)
   };
-/*Take start piece and move diagonally left or right. */
+/*Create a function to move a checker if it is legal or not occupied. */
   this.islegal = (start, end) => {
     if (this.board.grid[start[0]][start[1]]) {
       if ([start[0]] - 1 === [end[0]]) {
