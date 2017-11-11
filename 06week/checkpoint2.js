@@ -1,6 +1,6 @@
 'use strict';
 
-let userArray = [
+const userArray = [
     {
             "customer": {
                 "id": 1,
