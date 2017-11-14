@@ -40,8 +40,31 @@ const userArray = [{
       "productPrice": 7.99
     }
   },
+  {
+    "customer": {
+      "id": 5,
+      "customerName": "Edward O. Vidaurri",
+      "customerCity": "Austin",
+      "customerState": "TX",
+      "products": "Javascript Course",
+      "productPrice": 2790.00
+    }
+  },
+  //Add another 'customer item to userArray'.
+  {
+    "customer": {
+      "id": 5,
+      "customerName": "Edward O. Vidaurri",
+      "customerCity": "Austin",
+      "customerState": "TX",
+      "products": "Javascript Course",
+      "productPrice": 2790.00
+    }
+  },
 ];
+//Added 'const person = custObj.customer' variable to replace 'custObj.customer'
+//Forgot to apply it on previous console.log
 const objFunc = userArray.map((custObj) => {
-  let person = custObj.customer;
-  console.log(custObj.customer.customerName + " paid $" + custObj.customer.productPrice + ' for ' + custObj.customer.product + ' in ' + custObj.customer.customerCity + ', ' + custObj.customer.customerState + '.');
+  const person = custObj.customer;
+  console.log(`${person.customerName} paid $${person.productPrice} for ${person.products} in ${person.customerCity}, ${person.customerState}.`);
 });
