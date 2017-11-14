@@ -7,7 +7,7 @@ for (i = 0; i < carsInReverse.length; i++) {
 }
 
 //2a Write For..In Loop
-var person = {
+let person = {
   firstname: 'Edward',
   lastname: 'Vidaurri',
   birthDate: 'Oct 13'
@@ -21,7 +21,7 @@ for (const bDay in person){
  }
 
 //3. Write While Loop
-var e = 0;
+let e = 0;
 while (e <= 1000) {
   e++;
   console.log(e);
@@ -42,7 +42,7 @@ can make code seem more complex */
 
 /*What is the difference between a for loop and a for...in loop?
 The for loop are all about having to do with doing the same thing over and over
-again that consists of three expressions (var i = 0; i < 9; i++). 
+again that consists of three expressions (var i = 0; i < 9; i++).
 The for...in loop iterates or repeats over the enumerable properties of an object.
 For each distinct property, statements can be executed.*/
 
