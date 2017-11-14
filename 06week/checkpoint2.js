@@ -40,16 +40,6 @@ const userArray = [{
       "productPrice": 7.99
     }
   },
-  {
-    "customer": {
-      "id": 5,
-      "customerName": "Edward O. Vidaurri",
-      "customerCity": "Austin",
-      "customerState": "TX",
-      "products": "Javascript Course",
-      "productPrice": 2790.00
-    }
-  },
   //Add another 'customer item to userArray'.
   {
     "customer": {
@@ -64,6 +54,8 @@ const userArray = [{
 ];
 //Added 'const consumer = custObj.customer' variable to replace 'custObj.customer'
 //Forgot to apply it on previous console.log
+//Changed key 'product' to 'products' it seems that 'product' has application in
+//some other form.
 const objProp = userArray.map((custObj) => {
   const consumer = custObj.customer;
   console.log(`${consumer.customerName} paid $${consumer.productPrice} for ${consumer.products} in ${consumer.customerCity}, ${consumer.customerState}.`);
