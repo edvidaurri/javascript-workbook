@@ -43,5 +43,5 @@ const userArray = [{
 ];
 const objFunc = userArray.map((custObj) => {
   let person = custObj.customer;
-  console.log(custObj.customer.customerState);
+  console.log(custObj.customer.customerName + " paid $" + custObj.customer.productPrice + ' for ' + custObj.customer.product + ' in ' + custObj.customer.customerCity + ', ' + custObj.customer.customerState + '.');
 });
