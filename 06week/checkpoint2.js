@@ -62,9 +62,9 @@ const userArray = [{
     }
   },
 ];
-//Added 'const person = custObj.customer' variable to replace 'custObj.customer'
+//Added 'const consumer = custObj.customer' variable to replace 'custObj.customer'
 //Forgot to apply it on previous console.log
 const objProp = userArray.map((custObj) => {
-  const purchaser = custObj.customer;
- console.log(`${purchaser.customerName} paid $${purchaser.productPrice} for ${purchaser.products} in ${purchaser.customerCity}, ${purchaser.customerState}.`);
+  const consumer = custObj.customer;
+  console.log(`${consumer.customerName} paid $${consumer.productPrice} for ${consumer.products} in ${consumer.customerCity}, ${consumer.customerState}.`);
 });
