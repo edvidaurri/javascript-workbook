@@ -1,26 +1,26 @@
-'use strict';
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-class TicTacToe extends React.Component {
+class Square extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: null
+      value: null,
     };
   }
   render() {
     return (
-      <button className="square" onClick = {() => this.setState({value: 'X'})}>
+      <button className="square" onClick={() => this.setState({value: 'X'})}>
         {this.state.value}
       </button>
     );
   }
 }
 
-class TicTacToe extends React.Component {
+class Board extends React.Component {
   renderSquare(i) {
-    return <Square value={i} />;
+    return <Square value={i}/>;
   }
 
   render() {
@@ -49,7 +49,7 @@ class TicTacToe extends React.Component {
   }
 }
 
-class TicTacToe extends React.Component {
+class Game extends React.Component {
   render() {
     return (
       <div className="game">
@@ -66,4 +66,4 @@ class TicTacToe extends React.Component {
 }
 
 
-ReactDOM.render(<TicTacToe />, document.getElementById('tic-tac-toe'));
+export default Square && Board && Game;
