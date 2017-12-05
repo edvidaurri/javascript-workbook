@@ -51,6 +51,16 @@ const RaisedButtonExampleSimple = () => (
     <RaisedButton label="Full width" fullWidth={true} />
   </div>
   );
+  //Destructuring JavaScript Objects.
+  const person = {
+first: 'Eddie',
+last: 'Vidaurri',
+country: 'USA',
+city: 'Austin',
+
+};
+const { first, last, country, city } = person;
+console.log(first, city, country, last);
 
 class App extends Component {
   render() {
@@ -61,6 +71,7 @@ class App extends Component {
         <IconMenuExampleSimple/>
         <RaisedButtonExampleSimple/>
       </MuiThemeProvider>
+
     );
   }
 }
