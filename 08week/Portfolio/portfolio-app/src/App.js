@@ -4,6 +4,7 @@ import './App.css';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import IconMenu from 'material-ui/IconMenu';
@@ -11,6 +12,7 @@ import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
+//Hamburger Menu
 const IconMenuExampleSimple = () => (
   <div>
     <IconMenu
@@ -27,6 +29,7 @@ const IconMenuExampleSimple = () => (
   </div>
 );
 
+//Text field where name label moves to top.
 const TextFieldExampleSimple = () => (
   <div>
     <TextField
@@ -35,6 +38,7 @@ const TextFieldExampleSimple = () => (
   </div>
 );
 
+//Raised buttons.
   const style = {
   margin: 12,
   };
