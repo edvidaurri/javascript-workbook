@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
@@ -11,6 +14,8 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import About from './About';
+import Home from './Home';
 
 //Hamburger Menu
 const IconMenuExampleSimple = () => (
@@ -57,20 +62,31 @@ first: 'Eddie',
 last: 'Vidaurri',
 country: 'USA',
 city: 'Austin',
-
 };
+
+
 const { first, last, country, city } = person;
 console.log(first, city, country, last);
 
 class App extends Component {
   render() {
     return (
+      <Router>
+      <div>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          
+        </ul>
 
-      <MuiThemeProvider>
-        <TextFieldExampleSimple />
-        <IconMenuExampleSimple/>
-        <RaisedButtonExampleSimple/>
-      </MuiThemeProvider>
+        <hr/>
+
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+
+      </div>
+    </Router>
+
 
     );
   }
