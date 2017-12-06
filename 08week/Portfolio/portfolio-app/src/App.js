@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReactDOM from 'react-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+
 import {
   BrowserRouter as Router,
   Route,
@@ -18,44 +18,18 @@ import About from './About';
 import Home from './Home';
 
 //Hamburger Menu
-const IconMenuExampleSimple = () => (
-  <div>
-    <IconMenu
-      iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-      anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-      targetOrigin={{horizontal: 'left', vertical: 'top'}}
-    >
-      <MenuItem primaryText="Send feedback" animated/>
-      <MenuItem primaryText="Settings" />
-      <MenuItem primaryText="Help" />
-      <MenuItem primaryText="Sign out" />
-    </IconMenu>
 
-  </div>
-);
+//Text field where name label moves to top.const TextFieldExampleSimple = () => (
 
-//Text field where name label moves to top.
-const TextFieldExampleSimple = () => (
-  <div>
-    <TextField
-    floatingLabelText="Name"
-    />
-  </div>
-);
+
 
 //Raised buttons.
   const style = {
   margin: 12,
   };
-const RaisedButtonExampleSimple = () => (
-  <div>
-    <RaisedButton label="Primary" primary={true} />
-    <RaisedButton label="Secondary" secondary={true}style={style} />
 
-    <br/><br/><br/>
-    <RaisedButton label="Full width" fullWidth={true} />
-  </div>
-  );
+
+
   //Destructuring JavaScript Objects.
   const person = {
 first: 'Eddie',
@@ -73,17 +47,39 @@ class App extends Component {
     return (
       <Router>
       <div>
+        <IconMenu
+          iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+          anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+          targetOrigin={{horizontal: 'left', vertical: 'top'}}
+        >
+          <MenuItem primaryText="Send feedback" animated/>
+          <MenuItem primaryText="Settings" />
+          <MenuItem primaryText="Help" />
+          <MenuItem primaryText="Sign out" />
+        </IconMenu>
+
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
-          
+
         </ul>
 
         <hr/>
 
         <Route exact path="/" component={Home}/>
         <Route path="/about" component={About}/>
+        <div>
+          <TextField
+          floatingLabelText="Name"
+          />
+        </div>
+        <div>
+          <RaisedButton label="Primary" primary={true} />
+          <RaisedButton label="Secondary" secondary={true}style={style} />
 
+          <br/><br/><br/>
+          <RaisedButton label="Full width" fullWidth={true} />
+        </div>
       </div>
     </Router>
 

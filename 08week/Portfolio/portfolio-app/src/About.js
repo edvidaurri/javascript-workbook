@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
+class About extends Component {
+  render() {
+    return (
+      <div>
+        <h2>About</h2>
+      </div>
+    );
+  }
+}
+
 
 
 
