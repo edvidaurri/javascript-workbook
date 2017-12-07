@@ -7,6 +7,7 @@ stories: [],
 }
 
 componentDidMount(){
+
 fetch
 this.setState({stories: [...this.state.stories, story]})
 // const newState = this.state.storires;
