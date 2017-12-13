@@ -24,10 +24,10 @@ console.log(story);
 
 // Syntax error: Unexpected token (27:4)
 
-// this.setState({stories: [...this.state.stories, story]})
-// const newState = this.state.storires;
-// newState.push(story);
-// this.setState({stories: newState})
+this.setState({stories: [...this.state.stories, story]})
+const newState = this.state.storires;
+newState.push(story);
+this.setState({stories: newState})
 
 
 renderStories(){
