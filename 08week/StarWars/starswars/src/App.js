@@ -8,7 +8,7 @@ class App extends Component {
  }
  componentDidMount(){
     const that = this;
-    fetch('http://version1.api.memegenerator.net/javascript.js')
+    fetch('https://pokeapi.co/api/v2/pokemon-form/')
         .then((response) => response.json())
         .then((responseJson) => {
             that.setState({characters: responseJson.results})
