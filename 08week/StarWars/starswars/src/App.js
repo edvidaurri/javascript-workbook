@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
  }
  componentDidMount(){
     const that = this;
-    fetch('https://pokeapi.co/api/v2/pokemon-form/')
+    fetch('http://version1.api.memegenerator.net/javascript.js')
         .then((response) => response.json())
         .then((responseJson) => {
             that.setState({characters: responseJson.results})
@@ -39,8 +39,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Pokemon</h1>
+
+          <h1 className="App-title">Pic-Meme</h1>
         </header>
           {this.renderCharacters()}
       </div>
