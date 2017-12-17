@@ -1,76 +1,62 @@
 import React, { Component } from 'react';
-import './App.css';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
-import Start from './Start';
-import Images from './Images';
-import Judge from './Judge';
-import Winner from './Winner';
+import './App.css';
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import RaisedButton from 'material-ui/RaisedButton';
-import Popover from 'material-ui/Popover';
-import Menu from 'material-ui/Menu';
+import TextField from 'material-ui/TextField';
+import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-const style = {
-  marginLeft: 100
-};
+const IconMenuExampleSimple = () => (
+  <div>
+    <IconMenu
+      iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+      anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+      targetOrigin={{horizontal: 'left', vertical: 'top'}}
+    >
+      <MenuItem primaryText="Send feedback" animated/>
+      <MenuItem primaryText="Settings" />
+      <MenuItem primaryText="Help" />
+      <MenuItem primaryText="Sign out" />
+    </IconMenu>
+
+  </div>
+);
+
+const TextFieldExampleSimple = () => (
+  <div>
+    <TextField
+    floatingLabelText="Name"
+    />
+  </div>
+);
+
+  const style = {
+  margin: 12,
+  };
+const RaisedButtonExampleSimple = () => (
+  <div>
+    <RaisedButton label="Primary" primary={true} />
+    <RaisedButton label="Secondary" secondary={true}style={style} />
+
+    <br/><br/><br/>
+    <RaisedButton label="Full width" fullWidth={true} />
+  </div>
+  );
 
 class App extends Component {
-  state = {
-    open: false,
-  };
-
-  handleTouchTap = (event) => {
-    // This prevents ghost click.
-    event.preventDefault();
-
-    this.setState({
-      open: true,
-      anchorEl: event.currentTarget,
-    });
-  };
-
-  handleRequestClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
   render() {
     return (
-      <Router>
-        <div>
-          <Link to="/"><RaisedButton onClick={this.handleTouchTap} label="Pick Meme!" fullWidth={true} primary={true} /></Link>
-          <Popover
-            style={style}
-            open={this.state.open}
-            anchorEl={this.state.anchorEl}
-            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-            targetOrigin={{horizontal: 'left', vertical: 'top'}}
-            onRequestClose={this.handleRequestClose}
-          >
-            <Menu>
-              <MenuItem><Link to="/">Landing Page</Link></MenuItem>
-              <MenuItem><Link to="/Start.js"><RaisedButton label="Who is playing?" fullWidth={true} primary={true} /></Link></MenuItem>
-              <MenuItem><Link to="/Images.js"><RaisedButton label="Choose a caption!" fullWidth={true} primary={true} /></Link></MenuItem>
-              <MenuItem><Link to="/Judge.js"><RaisedButton label="Pick a winner!" fullWidth={true} primary={true} /></Link></MenuItem>
-              <MenuItem><Link to="/Winner.js"><RaisedButton label="Winner!" fullWidth={true} primary={true} /></Link></MenuItem>
-            </Menu>
-          </Popover>
 
-          <hr/>
-          <Route exact path="/" component={App}/>
-          <Route exact path="/Start.js" component={Start}/>
-          <Route path="/Images.js" component={Images}/>
-          <Route path="/Judge.js" component={Judge}/>
-          <Route path="/Winner.js" component={Winner}/>
-        </div>
-      </Router>
+      <MuiThemeProvider>
+        <TextFieldExampleSimple />
+        <IconMenuExampleSimple/>
+        <RaisedButtonExampleSimple/>
+      </MuiThemeProvider>
     );
   }
 }
