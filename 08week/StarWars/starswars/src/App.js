@@ -40,7 +40,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
 
-          <h1 className="App-title">Pic-Meme</h1>
+          <h1 className="App-title">Pokemon</h1>
         </header>
           {this.renderCharacters()}
       </div>
