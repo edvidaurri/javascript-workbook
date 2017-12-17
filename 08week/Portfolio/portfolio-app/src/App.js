@@ -39,13 +39,7 @@ const TextFieldExampleSimple = () => (
   margin: 12,
   };
 const RaisedButtonExampleSimple = () => (
-  <div>
-    <RaisedButton label="Primary" primary={true} />
-    <RaisedButton label="Secondary" secondary={true}style={style} />
 
-    <br/><br/><br/>
-    <RaisedButton label="Full width" fullWidth={true} />
-  </div>
   );
 
 class App extends Component {
