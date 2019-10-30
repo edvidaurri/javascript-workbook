@@ -8,14 +8,25 @@ const rl = readline.createInterface({
 });
 
 
-function Checker() {
-  // Your code here
+
+// make the end equal the start inside function
+// islegal function is necessary
+/*Make function to kill a checker*/
+
+function Checker(color) {
+  if (color === 'white') {
+    this.symbol = String.fromCharCode(0x125CF);
+    this.color = 'white';
+  } else {
+    this.symbol = String.fromCharCode(0x125CB);
+    this.color = 'black';
+  }
 }
 
 function Board() {
   this.grid = [];
   // creates an 8x8 array, filled with null values
-  this.createGrid = function() {
+  this.createGrid = () => {
     // loop to create the 8 rows
     for (let row = 0; row < 8; row++) {
       this.grid[row] = [];
@@ -27,7 +38,7 @@ function Board() {
   };
 
   // prints out the board
-  this.viewGrid = function() {
+  this.viewGrid = () => {
     // add our column numbers
     let string = "  0 1 2 3 4 5 6 7\n";
     for (let row = 0; row < 8; row++) {
@@ -51,18 +62,56 @@ function Board() {
     }
     console.log(string);
   };
-
-  // Your code here
+  this.populateGrid = () => {
+    // loops through the 8 rows
+    for (let row = 0; row < 8; row++) {
+      // ignores rows which should be empty
+      if (row === 3 || row === 4) continue;
+      // loops through the 8 columns
+      for (let col = 0; col < 8; col++) {
+        // sets current color based on the current row
+        let color = (row < 3 ? 'white' : 'black');
+        // alternates cells to populate with either white or black checkers
+        // then pushes checker to array named checkers
+        if (row % 2 === 0 && col % 2 === 1) {
+          this.grid[row][col] = new Checker(color);
+        } else if (row % 2 === 1 && col % 2 === 0) {
+          this.grid[row][col] = new Checker(color);
+        }
+      }
+    }
+  };
+  
 }
+
 function Game() {
 
   this.board = new Board();
 
   this.start = function() {
     this.board.createGrid();
-    // Your code here
+    this.board.populateGrid();
   };
-}
+
+  /* Need to take start piece and move diagonally left or right.*/
+  this.moveChecker = (rows, columns) => {
+    const start = rows.split('').map(str => Number(str));
+    const end = columns.split('').map(str => Number(str));
+    this.board.grid[end[0]][end[1]] = this.board.grid[start[0]][start[1]];
+    this.board.grid[start[0]][start[1]] = null;
+    // console.log (this.board.grid[start[0]][start[1]].color)
+  };
+/*Create a function to move a checker if it is legal or not occupied. */
+  this.islegal = (start, end) => {
+    if (this.board.grid[start[0]][start[1]]) {
+      if ([start[0]] - 1 === [end[0]]) {
+        if ([start[1]] - 1 === [end[1]] || [start[1]] + 1 === [end[1]]) {
+
+        }
+      }
+    }
+  }
+};
 
 function getPrompt() {
   game.board.viewGrid();
@@ -90,8 +139,8 @@ if (typeof describe === 'function') {
     });
   });
 
-  describe('Game.moveChecker()', function () {
-    it('should move a checker', function () {
+  describe('Game.moveChecker()', function() {
+    it('should move a checker', function() {
       assert(!game.board.grid[4][1]);
       game.moveChecker('50', '41');
       assert(game.board.grid[4][1]);
@@ -110,3 +159,5 @@ if (typeof describe === 'function') {
 } else {
   getPrompt();
 }
+
+// ```
